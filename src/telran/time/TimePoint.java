@@ -37,7 +37,9 @@ public class TimePoint implements Comparable<TimePoint>{
 			return false;
 		}
 		TimePoint other = (TimePoint) obj;
-	    return this.amount == other.getAmount() && this.timeUnit == other.getTimeUnit();
+	    int thisInSeconds = this.amount * this.timeUnit.getValue();
+	    int otherInSeconds = other.getAmount() * other.getTimeUnit().getValue();
+		return thisInSeconds == otherInSeconds;
 	}
 	
 	
